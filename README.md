@@ -16,17 +16,28 @@
 
 <div align="center">
 
-### 登录界面
-<img src="screenshots/1.jpg" width="300" alt="登录界面">
-
-### 虚拟机列表
-<img src="screenshots/2.jpg" width="300" alt="虚拟机列表">
-
-### 实时监控
-<img src="screenshots/3.jpg" width="300" alt="实时监控">
-
-### 硬件配置
-<img src="screenshots/4.jpg" width="300" alt="硬件配置">
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/1.jpg" width="400" alt="登录界面"><br/>
+      <b>登录界面</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/2.jpg" width="400" alt="虚拟机列表"><br/>
+      <b>虚拟机列表</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/3.jpg" width="400" alt="实时监控"><br/>
+      <b>实时监控</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/4.jpg" width="400" alt="硬件配置"><br/>
+      <b>硬件配置</b>
+    </td>
+  </tr>
+</table>
 
 </div>
 
