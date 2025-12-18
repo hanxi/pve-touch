@@ -68,7 +68,7 @@
 <body>
     <div id="app" v-cloak>
         <!-- Toast Notifications -->
-        <div v-if="toast.show" class="toast toast-top toast-center z-50">
+        <div v-if="toast.show" class="toast toast-top toast-center z-[100]">
             <div class="alert" :class="toast.type === 'error' ? 'alert-error' : 'alert-success'">
                 <span>{{ toast.message }}</span>
             </div>
@@ -913,9 +913,7 @@
                 async apiRequest(method, url, data = null, auth = true) {
                     const options = {
                         method,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: {},
                         credentials: 'include'  // 让浏览器自动发送和接收 Cookie
                     };
                     
@@ -929,13 +927,14 @@
                         options.headers['Authorization'] = `PVEAuthCookie=${this.authToken}`;
                     }
                     
-                    if (data && (method === 'POST' || method === 'PUT')) {
-                        if (method === 'POST' && url.includes('/access/ticket')) {
-                            // 登录请求使用 form data
-                            options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                    // PVE API 对于 POST/PUT 请求通常需要使用 application/x-www-form-urlencoded
+                    if (method === 'POST' || method === 'PUT') {
+                        options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                        // 即使没有数据，也需要发送空的 body
+                        if (data && typeof data === 'object') {
                             options.body = new URLSearchParams(data).toString();
                         } else {
-                            options.body = JSON.stringify(data);
+                            options.body = '';
                         }
                     }
                     
