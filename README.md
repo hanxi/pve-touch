@@ -76,6 +76,8 @@ cp /usr/share/pve-manager/touch/index.html.tpl /usr/share/pve-manager/touch/inde
 cp index.html.tpl /usr/share/pve-manager/touch/index.html.tpl
 ```
 
+**注意** pve9 的路径是： `/usr/share/pve-yew-mobile-gui`
+
 3. 刷新浏览器即可看到新界面（无需重启服务）
 
 ## 🔧 使用方法
